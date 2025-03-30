@@ -54,12 +54,6 @@ wss.on('connection', (ws) => {
 
     ws.on('close', () => {
         console.log('Client disconnected');
-        // Si no hay clientes conectados, detener el contador
-        if (wss.clients.size === 0 && interval) {
-            clearInterval(interval);
-            interval = null;
-            console.log("No clients connected, stopping interval.");
-        }
     });
 });
 

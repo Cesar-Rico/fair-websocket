@@ -1,6 +1,9 @@
 const WebSocket = require('ws');
 const PORT = process.env.PORT || 8080;
-const server = require('http').createServer();
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Server is running\n");
+});
 const wss = new WebSocket.Server({ server });
 
 let counter = 0;
